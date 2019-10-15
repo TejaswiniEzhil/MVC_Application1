@@ -1,0 +1,30 @@
+﻿@model MVC_Application1.Models.ListOfMovies
+@{
+    ViewBag.Title = "Create1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><font color="DarkGreen">Create a Movie</font></h2>
+<font color="Magenta">
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.LabelFor(b => b.MovieName)
+                @Html.TextBoxFor(b => b.MovieName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(b => b.MovieName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(b => b.ReleaseDate)
+                @Html.TextBoxFor(b => b.ReleaseDate, new { @class = "form-control" })
+                @Html.ValidationMessageFor(b => b.ReleaseDate)
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="cmdsubmit" value="submit" class=" btn-primary" />
+            </div>
+
+        }
+
+    </div>
+</font>

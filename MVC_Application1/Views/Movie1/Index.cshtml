@@ -1,0 +1,29 @@
+﻿@model List<MVC_Application1.Models.ListOfMovies>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2><font face=" ink free" color="aqua" size="17">Movies List</h2></font>
+<h3>@Html.ActionLink("New Movie Link", "Create1", "Movie1")</h3>
+<table class="table table-bordered table-hover">
+    
+    <tr>
+        <th>Movie Id</th>
+        <th>MovieNames</th>
+
+
+    </tr>
+    @foreach (var mov in Model)
+    {
+        <tr>
+            <td>@mov.Id</td>
+
+
+            <td>@Html.ActionLink(mov.MovieName, "details1", "Movie1", new { Id = mov.Id }, null)</td>
+            <td
+
+        </tr>
+    }
+</table>

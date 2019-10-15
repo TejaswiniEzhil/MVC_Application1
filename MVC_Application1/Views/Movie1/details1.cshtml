@@ -1,0 +1,20 @@
+﻿@model MVC_Application1.Models.ListOfMovies
+@{
+    ViewBag.Title = "details1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><font color="red">Movies</font></h2>
+@if (Model != null)
+{
+    <h3>@Model.MovieName</h3>
+    <ul>
+        <li>@Model.ReleaseDate.Value.ToLongDateString()</li>
+        
+    </ul>
+}
+else
+{
+    <text> No records!!</text>
+}
+<h3>@Html.ActionLink("Back to Movie List", "Index", "Movie1")</h3>

@@ -1,0 +1,32 @@
+﻿@model List<MVC_Application1.Models.CustomerDetails>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2><font-face ="ink free" color="aqua" size="18"> customers</font-face></h2>
+<h3>@Html.ActionLink("New Customer Link", "Create", "Cust")</h3>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>customer Id</th>
+        <th>Name</th>
+        <th>Memberid</th>
+        <th></th>
+
+    </tr>
+    @foreach (var cusstomers in Model)
+    {
+        <tr>
+            <td>@cusstomers.Id</td>
+
+            <td>@Html.ActionLink(cusstomers.Name, "details", "Cust", new { Id = cusstomers.Id }, null)</td>
+            <td> @cusstomers.Member.Id</td>
+            <td>@Html.ActionLink("Edit ","EditCustomer","Cust",new { Id = cusstomers.Id },null)</td>
+            <td>@Html.ActionLink("Delete","DeleteConfirmed","Cust", new { Id = cusstomers.Id }, new { @class ="btn-primary"})</td>
+        </tr>
+    }
+
+    
+</table>
+
+

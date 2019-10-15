@@ -1,0 +1,45 @@
+﻿@model MVC_Application1.Models.CustomerDetails
+@{
+    ViewBag.Title = "DeleteConfirmed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteConfirmed</h2>
+<div class="container">
+    <tr>
+        @Html.DisplayNameFor(model => model.Name)
+</tr>
+<tr>
+    @Html.DisplayFor(model => model.Name)
+</tr>
+<tr>
+    @Html.DisplayNameFor(model => model.Birthdate)
+</tr>
+<tr>
+    @Html.DisplayFor(model => model.Birthdate)
+</tr>
+<tr>
+    @Html.DisplayNameFor(model => model.Gender)
+</tr>
+<tr>
+    @Html.DisplayFor(model => model.Gender)
+</tr>
+<tr>
+    @Html.DisplayNameFor(model => model.MembershipType1Id)
+</tr>
+<tr>
+    @Html.DisplayFor(model => model.MembershipType1Id)
+</tr>
+
+
+@using (Html.BeginForm())
+{
+    
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+    </div>
+
